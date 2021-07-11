@@ -24,7 +24,6 @@ const Login = () => {
         const signedInUser = { name: displayName, email };
         setLoggedInUser(signedInUser);
         storeAuthToken();
-        history.replace(from);
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -43,6 +42,7 @@ const Login = () => {
         // Send token to your backend via HTTPS
         // ...
         sessionStorage.setItem("token", idToken);
+        history.replace(from);
       })
       .catch(function (error) {
         // Handle error
